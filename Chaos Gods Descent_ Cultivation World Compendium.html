@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Gods Descent - Novel Guide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #6b46c1;
+        --secondary-color: #f59e0b;
+        --background-dark: #1e293b;
+        --card-background: #334155;
+        --success-color: #10b981;
+        --danger-color: #ef4444;
+        --text-light: #e2e8f0;
+        --text-muted: #94a3b8;
+      }
+
+      body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: var(--background-dark);
+        color: var(--text-light);
+        font-family: 'Libre Baskerville', serif;
+        line-height: 1.6;
+      }
+
+      .header-section {
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        color: white;
+      }
+
+      .header-section h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .webnovel-link {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      .navigation {
+        background-color: var(--card-background);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .nav-item {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 12px;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .section {
+        background-color: var(--card-background);
+        margin-bottom: 25px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .section-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 15px 20px;
+        font-family: 'Cinzel', serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .section-content {
+        padding: 20px;
+      }
+
+      .character-card,
+      .technique-card,
+      .cultivation-card {
+        background-color: var(--background-dark);
+        border: 1px solid var(--primary-color);
+        border-radius: 6px;
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      .character-name,
+      .technique-name {
+        color: var(--secondary-color);
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      .bloodline-tier {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin: 2px;
+      }
+
+      .tier-divine {
+        background-color: var(--secondary-color);
+        color: black;
+      }
+      .tier-royal {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      .tier-spirit {
+        background-color: var(--success-color);
+        color: white;
+      }
+      .tier-mortal {
+        background-color: var(--text-muted);
+        color: white;
+      }
+
+      .cultivation-progress {
+        background-color: var(--background-dark);
+        border-radius: 10px;
+        padding: 8px;
+        margin: 8px 0;
+      }
+
+      .progress-bar {
+        background-color: var(--text-muted);
+        height: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        transition: width 0.3s ease;
+      }
+
+      .dao-tag {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        margin: 2px;
+      }
+
+      .map-placeholder {
+        background-color: var(--background-dark);
+        border: 2px dashed var(--text-muted);
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-style: italic;
+        border-radius: 8px;
+      }
+
+      .lore-timeline {
+        border-left: 3px solid var(--secondary-color);
+        padding-left: 20px;
+        margin-left: 10px;
+      }
+
+      .timeline-event {
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .timeline-event::before {
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+      }
+
+      .timeline-title {
+        color: var(--secondary-color);
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .add-button {
+        background-color: var(--success-color);
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .collapsible-content {
+        display: none;
+      }
+
+      .collapsible-content.active {
+        display: block;
+      }
+
+      .toggle-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .toggle-icon.rotated {
+        transform: rotate(90deg);
+      }
+    </style>
+  </head>
+  <body style="">
+    <div class="header-section">
+      <h1>Chaos Gods Descent</h1>
+      <p><strong>Author:</strong> SacredUnity</p>
+      <p><strong>Genre:</strong> Eastern Fantasy | Cultivation | Martial Arts</p>
+      <div>
+        <p>
+          <strong>Synopsis:</strong> Broken and betrayed, Xu Yantian returns home after facing death's embrace. Given a
+          second chance, he vows to right his wrongs, reconcile with his parents, and become powerful enough to ensure
+          betrayal never touches him again.
+        </p>
+      </div>
+      <a href="https://www.webnovel.com/book/chaos-gods-descent_30960883708139705" class="webnovel-link" target="_blank">Read on WebNovel</a>
+    </div>
+
+    <div class="navigation">
+      <h3 style="text-align: center; color: var(--secondary-color); margin-bottom: 15px">Quick Navigation</h3>
+      <div class="nav-grid">
+        <a href="#world-overview" class="nav-item">World Overview</a>
+        <a href="#characters" class="nav-item">Characters</a>
+        <a href="#cultivation" class="nav-item">Cultivation Systems</a>
+        <a href="#tracker" class="nav-item">Progress Tracker</a>
+        <a href="#techniques" class="nav-item">Techniques</a>
+        <a href="#maps" class="nav-item">Maps</a>
+        <a href="#bloodlines" class="nav-item">Bloodlines</a>
+        <a href="#lore" class="nav-item">Lore &amp; History</a>
+      </div>
+    </div>
+
+    <div class="section" id="world-overview">
+      <div class="section-header" onclick="toggleSection('world-overview')">
+        <span>🌍 World Overview</span>
+        <span class="toggle-icon rotated">▼</span>
+      </div>
+      <div class="section-content collapsible-content active">
+        <h4>The Heavenly Node Continent (Terra/Earth)</h4>
+        <p>
+          The world known as the "Heavenly Node Continent" is actually the ancestral home world of humanity - Terra,
+          also called Earth or the Blue Star. Once a thriving martial empire ruled by the Seven Martial Gods, Terra was
+          the center of a galactic civilization that spread the martial path across the universe.
+        </p>
+
+        <h4>Current State</h4>
+        <p>
+          After the catastrophic invasion and betrayal that destroyed the original martial civilization, the world has
+          been transformed. The green pastures and wheat fields are gone, replaced by a cultivation-focused society that
+          has forgotten its martial origins.
+        </p>
+
+        <h4>Key Locations</h4>
+        <ul>
+          <li><strong>Capital of Great Qin:</strong> Former martial capital, now the site of great tragedy</li>
+          <li>
+            <strong>Limbo Realm:</strong> A transitional space for all cultivation paths where mortals shed their shells
+            to ascend
+          </li>
+          <li>
+            <strong>Various Kingdoms:</strong> Including the ancient Chachapoya Kingdom and Mauretania (creators of the
+            Primal Path)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="characters">
+      <div class="section-header" onclick="toggleSection('characters')">
+        <span>👥 Character Registry</span>
+        <span class="toggle-icon">▶</span>
+      </div>
+      <div class="section-content collapsible-content">
+        <h4>Main Characters</h4>
+
+        <div class="character-card">
+          <div class="character-name">Xu Yantian (Main Protagonist)</div>
+          <p>
+            <strong>Background:</strong> Former son of a city lord, once a mighty upcoming genius who fell from grace.
+            Betrayed and left broken, he has returned home with a second chance at life.
+          </p>
+          <p>
+            <strong>Bloodline:</strong> <span class="bloodline-tier tier-divine">Divine Grade (98% Purity)</span> -
+            Heavenly Reverse Lineage
+          </p>
+          <p><strong>Physique:</strong> Star Physique</p>
+          <p>
+            <strong>Goals:</strong> Reconcile with parents, gain power to prevent future betrayal, seek revenge against
+            Bai Yan Yan
+          </p>
+          <p><strong>Current Status:</strong> Beginning cultivation journey, accessing ancient martial records</p>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">The Old Man (Martial God)</div>
+          <p><strong>Identity:</strong> Former Left Commander of the Seven Martial Gods from Terra</p>
+          <p>
+            <strong>Background:</strong> One of three Martial Gods who opposed opening portals to other worlds.
+            Witnessed the destruction of humanity and betrayal by the Storm Fist Martial God.
+          </p>
+          <p><strong>Current State:</strong> Exists in spiritual form, guides Yantian with ancient martial knowledge</p>
+          <p><strong>Relationship:</strong> Mentor figure to Yantian</p>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">Bai Yan Yan</div>
+          <p><strong>Role:</strong> Primary antagonist (mentioned)</p>
+          <p><strong>Relationship:</strong> Betrayed Yantian in the past</p>
+          <p><strong>Status:</strong> Target of Yantian's revenge</p>
+        </div>
+
+        <h4>Historical Figures</h4>
+
+        <div class="character-card">
+          <div class="character-name">Storm Fist Martial God</div>
+          <p><strong>Role:</strong> Fallen leader, traitor</p>
+          <p>
+            <strong>Background:</strong> Once the strongest among the Seven Martial Gods and their general. Betrayed
+            humanity by bowing to cultivators and killing his fellow Martial Gods.
+          </p>
+          <p><strong>Crime:</strong> Handed over the last loyal Martial God to Heavenly Supreme Zai Zhen</p>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">Heavenly Supreme Zai Zhen</div>
+          <p><strong>Role:</strong> Major antagonist (historical)</p>
+          <p><strong>Cultivation:</strong> Supreme level cultivator</p>
+          <p><strong>Dao:</strong> Dao of Death and Despair</p>
+          <p><strong>Crime:</strong> Orchestrated the genocide of Terra's population to prove his Dao</p>
+        </div>
+
+        <h4>Clans &amp; Families</h4>
+        <div class="character-card">
+          <div class="character-name">Xu Family</div>
+          <p><strong>Status:</strong> City Lord family</p>
+          <p><strong>Notable Members:</strong> Xu Yantian (son), Parents (to be reconciled with)</p>
+          <p><strong>Territory:</strong> Unknown city in current timeline</p>
+        </div>
+
+        <button class="add-button" onclick="addNewCharacter()">+ Add New Character</button>
+      </div>
+    </div>
+
+    <div class="section" id="cultivation">
+      <div class="section-header" onclick="toggleSection('cultivation')">
+        <span>⚡ Cultivation Systems</span>
+        <span class="toggle-icon rotated">▼</span>
+      </div>
+      <div class="section-content collapsible-content active">
+        <div class="stats-grid">
+          <div class="cultivation-card">
+            <h4 style="color: var(--secondary-color)">Martial Arts Path</h4>
+            <p><strong>Origin:</strong> Original Terra/Earth system</p>
+            <p>
+              <strong>Philosophy:</strong> "From birth to death, we live by the code. Train youth, defend family, honor
+              ancestors through strength."
+            </p>
+            <p><strong>Core Principles:</strong></p>
+            <ul>
+              <li>Strength through discipline and honor</li>
+              <li>Protection of the weak</li>
+              <li>Ancestral reverence</li>
+              <li>Martial brotherhood</li>
+            </ul>
+            <p><strong>Status:</strong> Nearly extinct, preserved in ancient records</p>
+          </div>
+
+          <div class="cultivation-card">
+            <h4 style="color: var(--secondary-color)">Inner Qi Path</h4>
+            <p><strong>Core System:</strong> Qi Center → Qi Nucleus</p>
+            <p><strong>Process:</strong></p>
+            <ul>
+              <li>Awaken the Qi Center (unawakened core)</li>
+              <li>Pass through Limbo Realm</li>
+              <li>Transform into Qi Nucleus</li>
+              <li>Core type depends on luck and talent</li>
+            </ul>
+            <p><strong>Apertures:</strong> Hu apertures, Nei apertures</p>
+          </div>
+
+          <div class="cultivation-card">
+            <h4 style="color: var(--secondary-color)">Primal Path (Bead System)</h4>
+            <p><strong>Origin:</strong> Ancient Chachapoya Kingdom &amp; Mauretania (PMR era, 60 million years ago)</p>
+            <p><strong>Creators:</strong> "Children of the Clouds" - King Yupan and his sworn brother</p>
+            <p><strong>Core System:</strong> Primal Bead (any non-living object)</p>
+            <p><strong>Bead Types:</strong></p>
+            <ul>
+              <li><strong>Weapon Beads:</strong> Sword, axe, bow, staff, etc.</li>
+              <li><strong>Primal Beast Beads:</strong> Spiritual beast companions (rare)</li>
+            </ul>
+            <p><strong>Progression:</strong> Bronze → Steel → Gold → Platinum → Adamantium</p>
+            <p><strong>Risk:</strong> Being overtaken by the will inside powerful cores</p>
+          </div>
+
+          <div class="cultivation-card">
+            <h4 style="color: var(--secondary-color)">General Cultivation Principles</h4>
+            <p><strong>Limbo Realm:</strong> Universal transitional space for all paths</p>
+            <p><strong>Core Types:</strong></p>
+            <ul>
+              <li>Source Core</li>
+              <li>Mana Core</li>
+              <li>Qi Center/Nucleus</li>
+              <li>Primal Bead</li>
+            </ul>
+            <p>
+              <strong>Ascension Process:</strong> Stimulate core → Inflame with path's energy → Follow technique scroll
+              → Refine core
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="tracker">
+      <div class="section-header" onclick="toggleSection('tracker')">
+        <span>📊 Cultivation Progress Tracker</span>
+        <span class="toggle-icon rotated">▼</span>
+      </div>
+      <div class="section-content collapsible-content active">
+        <div class="character-card">
+          <div class="character-name">Xu Yantian - Progress Tracking</div>
+          <p><strong>Current Realm:</strong> Limbo Realm (Transitioning)</p>
+          <div class="cultivation-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 15%"></div>
+            </div>
+            <small>15% - Beginning ascension process</small>
+          </div>
+
+          <p><strong>Bloodline Development:</strong></p>
+          <div class="cultivation-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 98%"></div>
+            </div>
+            <small>98% Purity - Divine Grade Heavenly Reverse Lineage</small>
+          </div>
+
+          <p><strong>Known Daos:</strong></p>
+          <span class="dao-tag">Revenge</span>
+          <span class="dao-tag">Determination</span>
+          <span class="dao-tag">Family Bond</span>
+
+          <p><strong>Next Goals:</strong></p>
+          <ul>
+            <li>Complete Limbo Realm transition</li>
+            <li>Form first cultivation ring</li>
+            <li>Access more martial records</li>
+          </ul>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">Heavenly Supreme Zai Zhen (Historical)</div>
+          <p><strong>Realm:</strong> Heavenly Supreme</p>
+          <p>
+            <strong>Primary Dao:</strong>
+            <span class="dao-tag" style="background-color: var(--danger-color)">Death and Despair</span>
+          </p>
+          <p>
+            <strong>Philosophy:</strong> "Every other path contradicts mine, so I'll erase them all to prove my Dao"
+          </p>
+          <p><strong>Status:</strong> Historical antagonist (presumably defeated or ascended)</p>
+        </div>
+
+        <button class="add-button">+ Add Character Progress</button>
+      </div>
+    </div>
+
+    <div class="section" id="techniques">
+      <div class="section-header" onclick="toggleSection('techniques')">
+        <span>⚔️ Techniques Registry</span>
+        <span class="toggle-icon">▶</span>
+      </div>
+      <div class="section-content collapsible-content">
+        <h4>Martial Techniques</h4>
+
+        <div class="technique-card">
+          <div class="technique-name">Storm Fist Technique</div>
+          <p><strong>Origin:</strong> Storm Fist Martial God</p>
+          <p><strong>Type:</strong> Martial Arts</p>
+          <p><strong>Status:</strong> Lost/Corrupted (due to betrayal)</p>
+          <p>
+            <strong>Description:</strong> The signature technique of the strongest Martial God, likely involving
+            storm-based attacks
+          </p>
+        </div>
+
+        <h4>Cultivation Techniques</h4>
+
+        <div class="technique-card">
+          <div class="technique-name">Core Refinement Methods</div>
+          <p><strong>Type:</strong> Universal cultivation technique</p>
+          <p><strong>Process:</strong> Stimulate core → Inflame with qi → Follow technique scroll → Refine</p>
+          <p><strong>Variations:</strong> Different for each cultivation path</p>
+        </div>
+
+        <div class="technique-card">
+          <div class="technique-name">Limbo Realm Transition</div>
+          <p><strong>Type:</strong> Universal ascension technique</p>
+          <p><strong>Purpose:</strong> Shed mortal shell to ascend</p>
+          <p><strong>Requirements:</strong> Opened apertures (Hu or Nei)</p>
+        </div>
+
+        <h4>Primal Path Techniques</h4>
+
+        <div class="technique-card">
+          <div class="technique-name">Beast Bond Formation</div>
+          <p><strong>Origin:</strong> Primal Path system</p>
+          <p><strong>Type:</strong> Beast Bead mastery</p>
+          <p><strong>Effects:</strong> Summon, merge, or channel mythic beast powers</p>
+          <p><strong>Evolution:</strong> Beast and master grow together through trials</p>
+        </div>
+
+        <div class="technique-card">
+          <div class="technique-name">Weapon Bead Mastery</div>
+          <p><strong>Origin:</strong> Primal Path system</p>
+          <p><strong>Type:</strong> Weapon evolution technique</p>
+          <p><strong>Progression:</strong> Material evolution through mastery levels</p>
+        </div>
+
+        <h4>Dao Techniques</h4>
+
+        <div class="technique-card">
+          <div class="technique-name">Dao of Death and Despair</div>
+          <p><strong>Practitioner:</strong> Heavenly Supreme Zai Zhen</p>
+          <p><strong>Philosophy:</strong> Erase all contradicting paths to prove supremacy</p>
+          <p><strong>Effects:</strong> Mass destruction, genocide abilities</p>
+          <p><strong>Status:</strong> Forbidden/Evil cultivation path</p>
+        </div>
+
+        <button class="add-button">+ Add New Technique</button>
+      </div>
+    </div>
+
+    <div class="section" id="maps">
+      <div class="section-header" onclick="toggleSection('maps')">
+        <span>🗺️ World Maps</span>
+        <span class="toggle-icon">▶</span>
+      </div>
+      <div class="section-content collapsible-content">
+        <h4>Heavenly Node Continent (Terra)</h4>
+        <div class="map-placeholder">
+          <div>
+            <p>World Map Area</p>
+            <p>Upload your custom world map here</p>
+            <button class="add-button">+ Add World Map</button>
+          </div>
+        </div>
+
+        <h4>Regional Maps</h4>
+        <div class="stats-grid">
+          <div class="map-placeholder" style="height: 200px">
+            <div>
+              <p>Xu Family Territory</p>
+              <button class="add-button">+ Add Regional Map</button>
+            </div>
+          </div>
+          <div class="map-placeholder" style="height: 200px">
+            <div>
+              <p>Ancient Capital of Great Qin</p>
+              <button class="add-button">+ Add Historical Map</button>
+            </div>
+          </div>
+        </div>
+
+        <h4>Special Locations</h4>
+        <div class="character-card">
+          <div class="character-name">Limbo Realm</div>
+          <p><strong>Type:</strong> Dimensional space</p>
+          <p><strong>Purpose:</strong> Universal transition realm for all cultivation paths</p>
+          <p><strong>Access:</strong> Available to all beings with opened apertures</p>
+          <p><strong>Description:</strong> A resting spot where mortals shed their shells to ascend</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="bloodlines">
+      <div class="section-header" onclick="toggleSection('bloodlines')">
+        <span>🧬 Bloodline System</span>
+        <span class="toggle-icon">▶</span>
+      </div>
+      <div class="section-content collapsible-content">
+        <h4>Bloodline Classification System</h4>
+        <p>
+          Created by ancient martial artists to categorize and understand bloodline potential. Each tier has seven
+          grades (Grade 7 = lowest, Grade 1 = peak).
+        </p>
+
+        <div class="stats-grid">
+          <div class="cultivation-card">
+            <h4><span class="bloodline-tier tier-divine">Divine Tier</span></h4>
+            <p><strong>Rarity:</strong> Extremely Rare</p>
+            <p><strong>Power Level:</strong> 10-30% combat advantage</p>
+            <p><strong>Grades:</strong> 1-7 (Yantian = Grade 1+ at 98% purity)</p>
+            <p><strong>Examples:</strong> Heavenly Reverse Lineage</p>
+            <p><strong>Effects:</strong> Extraordinary cultivation bonuses, unique abilities</p>
+          </div>
+
+          <div class="cultivation-card">
+            <h4><span class="bloodline-tier tier-royal">Royal Tier</span></h4>
+            <p><strong>Rarity:</strong> Rare</p>
+            <p><strong>Power Level:</strong> Significant advantages</p>
+            <p><strong>Grades:</strong> 1-7</p>
+            <p><strong>Examples:</strong> Ancient royal family bloodlines</p>
+            <p><strong>Effects:</strong> Strong cultivation bonuses, leadership qualities</p>
+          </div>
+
+          <div class="cultivation-card">
+            <h4><span class="bloodline-tier tier-spirit">Spirit Tier</span></h4>
+            <p><strong>Rarity:</strong> Uncommon</p>
+            <p><strong>Power Level:</strong> Moderate advantages</p>
+            <p><strong>Grades:</strong> 1-7</p>
+            <p><strong>Examples:</strong> Spiritual beast descendants</p>
+            <p><strong>Effects:</strong> Enhanced cultivation potential</p>
+          </div>
+
+          <div class="cultivation-card">
+            <h4><span class="bloodline-tier tier-mortal">Mortal Tier</span></h4>
+            <p><strong>Rarity:</strong> Common</p>
+            <p><strong>Power Level:</strong> Basic advantages</p>
+            <p><strong>Grades:</strong> 1-7</p>
+            <p><strong>Examples:</strong> Standard human bloodlines</p>
+            <p><strong>Effects:</strong> Minor cultivation benefits</p>
+          </div>
+        </div>
+
+        <h4>Imperial Bloodline Protection Decree</h4>
+        <div class="character-card">
+          <div class="character-name">Emperor's Blood Oath</div>
+          <p>
+            <strong>Decree:</strong> "Should martial lords, supreme Martial ancestors and high martial masters attempt
+            to use bloodlines against their own, the will of the world itself should erase their entire existence."
+          </p>
+          <p><strong>Binding:</strong> Sealed with blood and star scripts</p>
+          <p>
+            <strong>Purpose:</strong> Prevent discrimination and ensure bloodline system serves guidance, not division
+          </p>
+          <p><strong>Effect:</strong> Automatic cosmic punishment for bloodline-based oppression</p>
+        </div>
+
+        <h4>Known Bloodlines</h4>
+        <div class="character-card">
+          <div class="character-name">Heavenly Reverse Lineage</div>
+          <p><strong>Tier:</strong> <span class="bloodline-tier tier-divine">Divine Grade</span></p>
+          <p><strong>Purity:</strong> 98% (Xu Yantian)</p>
+          <p><strong>Rarity:</strong> Extremely rare</p>
+          <p><strong>Special Properties:</strong> Enhanced with Star Physique</p>
+          <p><strong>Benefits:</strong> Exceptional cultivation potential, unique abilities</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="lore">
+      <div class="section-header" onclick="toggleSection('lore')">
+        <span>📚 Lore &amp; History</span>
+        <span class="toggle-icon">▶</span>
+      </div>
+      <div class="section-content collapsible-content">
+        <h4>Timeline of Terra's Fall</h4>
+        <div class="lore-timeline">
+          <div class="timeline-event">
+            <div class="timeline-title">The Golden Age of Martial Arts</div>
+            <p>
+              Terra (Earth/Blue Star) thrived under the Seven Martial Gods. The human race lived by the martial code:
+              train youth, defend family, honor ancestors. They ruled and protected their galaxy, spreading the martial
+              path across the universe.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">The Arrival of the First Cultivator</div>
+            <p>
+              A single lost cultivator arrived from another world. The martial artists welcomed him into the Hall of
+              Martial Paths. He spoke of strange distant worlds, selling them "the most dangerous weapon of
+              all—curiosity."
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">The Great Debate</div>
+            <p>
+              The Seven Martial Gods voted on opening portals to other worlds. Only three Gods (including the Left
+              Commander) voted against it, believing Terra was already perfect. They were outvoted by world governments
+              and the other four Martial Gods.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">The Three's Retreat</div>
+            <p>
+              The three opposing Martial Gods took their legacies and vanished into retreat, wanting no part in what was
+              to come. They remained in seclusion for thousands of years.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">Terra's Destruction</div>
+            <p>
+              When the three Gods finally awakened, Terra was gone. No green pastures, no wheat fields—just fire, smoke,
+              corpses, and unimaginable slaughter. The cultivators had committed genocide against humanity.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">The Wall of Heads</div>
+            <p>
+              At the capital of Great Qin, the cultivators built six hundred stone walls covered with human heads,
+              turning the entire city into a monument of death and displaying their victory over the martial artists.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">The Great Betrayal</div>
+            <p>
+              The Storm Fist Martial God, strongest and leader of the Seven, betrayed his own people. He bowed to the
+              cultivators, watched his brothers and sisters be tortured, and ultimately killed the two loyal Martial
+              Gods during their final counterattack.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">Zai Zhen's Revelation</div>
+            <p>
+              Heavenly Supreme Zai Zhen revealed his true purpose: to prove the Dao of Death and Despair by erasing all
+              contradicting paths. Humanity's extinction was necessary for his Dao to become the "only true proven Dao."
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">The Divine Intervention</div>
+            <p>
+              After the Left Commander's death, he was summoned to a floating palace by a true divine being. This god
+              fulfilled a pact with a Martial Goddess, extracting the last human blood and sealing it in a Star script
+              to preserve humanity's bloodline.
+            </p>
+          </div>
+
+          <div class="timeline-event">
+            <div class="timeline-title">Present Day</div>
+            <p>
+              The world now known as "Heavenly Node Continent" has forgotten its martial origins. Xu Yantian, bearer of
+              the preserved bloodline, begins his journey to reclaim the lost martial path and prevent future betrayals.
+            </p>
+          </div>
+        </div>
+
+        <h4>Key Historical Periods</h4>
+        <div class="character-card">
+          <div class="character-name">Primal Dawn Era</div>
+          <p><strong>Time:</strong> 60 million years ago</p>
+          <p><strong>Event:</strong> PMR (Primal Martial Revolution)</p>
+          <p><strong>Key Figures:</strong> King Yupan of Chachapoya Kingdom, Ancient King of Mauretania</p>
+          <p><strong>Achievement:</strong> Creation of the Primal Path cultivation system</p>
+          <p><strong>Innovation:</strong> Discovery of using any non-living object as a cultivation core</p>
+        </div>
+
+        <h4>Lost Civilizations</h4>
+        <div class="stats-grid">
+          <div class="character-card">
+            <div class="character-name">Chachapoya Kingdom</div>
+            <p><strong>Title:</strong> "Children of the Clouds"</p>
+            <p><strong>Specialty:</strong> Wind traversal techniques</p>
+            <p><strong>Legacy:</strong> Co-creators of Primal Path</p>
+            <p><strong>Status:</strong> Vanished kingdom</p>
+          </div>
+
+          <div class="character-card">
+            <div class="character-name">Mauretania Kingdom</div>
+            <p><strong>Partnership:</strong> Sworn brothers with Chachapoya</p>
+            <p><strong>Contribution:</strong> Primal Path development</p>
+            <p><strong>Status:</strong> Ancient vanished kingdom</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="chapter-notes">
+      <div class="section-header" onclick="toggleSection('chapter-notes')">
+        <span>📖 Chapter Notes &amp; Plot Tracking</span>
+        <span class="toggle-icon">▶</span>
+      </div>
+      <div class="section-content collapsible-content">
+        <h4>Chapter Progress (Current: 9 chapters on WebNovel)</h4>
+
+        <div class="character-card">
+          <div class="character-name">Chapter 1-2: The Return</div>
+          <p><strong>Key Events:</strong> Yantian returns home after facing betrayal and death</p>
+          <p><strong>Character Development:</strong> Vows to reconcile with parents and gain power</p>
+          <p><strong>Important Details:</strong> Introduction to his past as city lord's son</p>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">Chapter 3: Truth Part-2</div>
+          <p><strong>Major Revelation:</strong> Terra's true identity as Earth revealed</p>
+          <p><strong>Historical Exposition:</strong> The fall of the martial civilization</p>
+          <p><strong>Key Character:</strong> Introduction of the Old Man (Left Commander)</p>
+          <p><strong>World Building:</strong> Seven Martial Gods, cultivator invasion, betrayal</p>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">Chapter 5: New Hope</div>
+          <p><strong>Plot Development:</strong> Things working out better than expected</p>
+          <p><strong>Old Man's Perspective:</strong> Surprised by positive developments</p>
+          <p><strong>Tone:</strong> Cautious optimism about coincidences</p>
+        </div>
+
+        <div class="character-card">
+          <div class="character-name">Chapter 8: Advancing</div>
+          <p><strong>Cultivation Focus:</strong> Limbo realm and ascension mechanics</p>
+          <p><strong>System Explanation:</strong> Bloodline tiers and grades detailed</p>
+          <p><strong>Character Growth:</strong> Yantian's bloodline purity revealed (98%)</p>
+          <p><strong>Historical Context:</strong> Primal Path origins and ancient kingdoms</p>
+        </div>
+
+        <h4>Plot Threads to Track</h4>
+        <div class="stats-grid">
+          <div class="character-card">
+            <div class="character-name">Revenge Arc</div>
+            <p><strong>Target:</strong> Bai Yan Yan</p>
+            <p><strong>Status:</strong> Planned/Future</p>
+            <p><strong>Requirements:</strong> Sufficient power cultivation</p>
+          </div>
+
+          <div class="character-card">
+            <div class="character-name">Family Reconciliation</div>
+            <p><strong>Goal:</strong> Repair relationship with parents</p>
+            <p><strong>Status:</strong> Ongoing/Priority</p>
+            <p><strong>Importance:</strong> Core character motivation</p>
+          </div>
+
+          <div class="character-card">
+            <div class="character-name">Martial Path Revival</div>
+            <p><strong>Legacy:</strong> Ancient Terra martial arts</p>
+            <p><strong>Source:</strong> Old Man's records and guidance</p>
+            <p><strong>Status:</strong> Beginning stages</p>
+          </div>
+        </div>
+
+        <h4>Future Chapter Planning</h4>
+        <div class="character-card">
+          <div class="character-name">Upcoming Developments</div>
+          <p><strong>Immediate:</strong> Complete Limbo Realm transition</p>
+          <p><strong>Short-term:</strong> Form first cultivation ring, access more records</p>
+          <p><strong>Medium-term:</strong> Begin martial training, encounter other cultivators</p>
+          <p><strong>Long-term:</strong> Confrontation with Bai Yan Yan, martial path spreading</p>
+        </div>
+
+        <button class="add-button">+ Add Chapter Notes</button>
+      </div>
+    </div>
+
+    <script>
+      function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const content = section.querySelector('.collapsible-content');
+        const icon = section.querySelector('.toggle-icon');
+
+        if (content.classList.contains('active')) {
+          content.classList.remove('active');
+          icon.innerHTML = '▶';
+          icon.classList.remove('rotated');
+        } else {
+          content.classList.add('active');
+          icon.innerHTML = '▼';
+          icon.classList.add('rotated');
+        }
+      }
+
+      function addNewCharacter() {
+        alert('Character addition feature - Connect to your preferred note-taking system');
+      }
+
+      // Initialize with some sections open
+      document.addEventListener('DOMContentLoaded', function () {
+        const sectionsToOpen = ['world-overview', 'cultivation'];
+        sectionsToOpen.forEach((sectionId) => {
+          const section = document.getElementById(sectionId);
+          const content = section.querySelector('.collapsible-content');
+          const icon = section.querySelector('.toggle-icon');
+          content.classList.add('active');
+          icon.innerHTML = '▼';
+          icon.classList.add('rotated');
+        });
+      });
+    </script>
+  
+
+</body></html>
